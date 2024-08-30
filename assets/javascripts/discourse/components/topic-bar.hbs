@@ -1,0 +1,29 @@
+<li class="topic-bar">
+  <div class="topic-bar-main-info">
+    <span class="topic-bar-title">{{@topic.title}}</span>
+    <div class="topic-bar-buttons">
+      {{#if this.currentUser.admin}}
+        <div class="topic-bar-button-dropdown">
+          <ClassroomButton @links={{this.topicBarLinks}}/>
+        </div>
+      {{/if}}
+      <span class="topic-bar-caret" {{on "click" this.toggleIsOpen}}>{{dIcon (if this.isOpen "chevron-up" "chevron-down")}}</span>
+    </div>
+  </div>
+  {{#if this.isOpen}}
+  <div class="topic-bar-videos">
+      <DragSortList
+        @items = {{@videos}}
+        @dragEndAction = {{this.dragEnd}}
+        as |item|
+      >
+        {{item.title}}
+      </DragSortList>
+    {{!-- {{#each @videos as |video| }}
+      <TopicVideo @video={{video}} />
+    {{else}} --}}
+      <div class="topic-bar-title">No videos in this topic :(</div>
+    {{!-- {{/each}} --}}
+  </div>
+  {{/if}}
+</li>

@@ -1,0 +1,6 @@
+<DButton @action={{action "toggleDropdown"}} @icon="ellipsis-v"  @class="dropdown-toggle-button"/>
+<ul class="dropdown-menu">
+  {{#each @links as |link|}}
+    <ClassroomButtonLink @title={{link.title}} @icon={{link.icon}} @action={{link.action}} />
+  {{/each}}
+</ul>

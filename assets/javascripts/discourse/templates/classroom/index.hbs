@@ -1,0 +1,13 @@
+<div class="classroom-container">
+  <ClassroomSidebar @course={{this.course}} />
+  <div class="classroom-content">
+    <div class="topics">
+      {{#each this.topics as |topic|}}
+          <TopicBar @topic={{topic}} @videos={{topic.videos}}/>
+      {{else}}
+        <h3>Sorry, no topics here :( </h3>
+      {{/each}}
+    </div>
+  </div>
+</div>
+

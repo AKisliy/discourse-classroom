@@ -1,0 +1,177 @@
+/* Containers */
+.popup-content {
+    position: relative;
+    background-color: #fff;
+    color: black;
+    padding: 32px;
+    border-radius: 4px;
+    //box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    max-width: 100%;
+}
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; // Ensure it is above other elements
+}
+
+// if we want to use DModal
+.popup-container {
+    display: flex;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin: 0;
+    transform: translate(-50%, -50%);
+    // justify-content: center;
+    // align-items: center;
+    width: max-content;
+
+    .d-modal__container{
+        border-radius: 4px;
+        box-shadow: none;
+    }
+}
+
+/* Fields and strings */
+.popup-title {
+    display: inline-block;
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 24px;
+}
+
+.popup-field{
+    display: flex;
+    flex-flow: column;
+    gap: 8px;
+
+    .popup-field-name{
+        margin-top: 8px;
+        font-weight: 400;
+    }
+
+    .d-editor-preview-wrapper{
+        display: none;
+    }
+}
+
+.popup-input {
+    display: block;
+    width: 100%;
+    border-radius: 12px;
+    background-clip: padding-box;
+    border-color: var(--primary);
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    margin-bottom: 0px;
+}
+
+/* Buttons */ 
+.popup-buttons {
+    display: flex;
+    margin-top: 16px;
+    justify-items: flex-end;
+    //position: absolute;
+    gap: 10px;
+    float: right;
+
+    .right-popup-button {
+        right: 0;
+        padding: 16px 32px;
+        background-color: #179E7E;
+        border-radius: 16px;
+        border: 1px solid #179E7E;
+        color: white;
+      
+        &:hover{
+          background-color: white;
+          color: black;
+        }
+
+        &.leave,
+        &.delete {
+            border-color: #FF2A00;
+            background-color: #FF2A00;
+
+            &:hover{
+                background-color: white;
+                color: black;
+            }      
+        }
+
+        &.save {
+            border-color: black;
+            background-color: black;
+
+            &:hover{
+                background-color: white;
+                color: black;
+            }
+        }
+    }
+      
+    .cancel-popup-button {
+        border: none;
+        background-color: white;
+      
+        &:hover{
+          color: red;
+        }
+    }
+}
+
+/* Images */
+.popup-image-container{
+    display: flex;
+    flex-direction: column;
+    max-width: inherit;
+    gap: 16px;
+
+    .image-uploader-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+
+        .course-image{
+            max-width: inherit;
+            width: 50%;
+        }
+
+        .btn{
+            background-color: black;
+            border: outset 1px var(--primary);
+            border-radius: 12px;
+            color: red;
+
+            &:hover{
+                background-color: var(--primary);
+            }
+        }
+
+        .lightbox{
+            display: inline;
+        }
+
+        .uploaded-image-preview.input-xxlarge{
+            max-width: 300px;
+            max-height: 200px;
+            border-radius: 12px;
+        }
+
+        .meta{
+            display: block;
+            color: var(--primary);
+            z-index: 1000;
+        }
+    }
+}

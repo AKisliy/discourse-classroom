@@ -1,0 +1,22 @@
+<%= form_with(model: course_field) do |form| %>
+  <% if course_field.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(course_field.errors.count, "error") %> prohibited this course_field from being saved:</h2>
+
+      <ul>
+        <% course_field.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :image_link, style: "display: block" %>
+    <%= form.text_field :image_link %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,13 @@
+<!-- app/templates/classroom/classroom_topics/new.hbs -->
+<h1>Create New Topic</h1>
+<form {{on "submit" this.createTopic}}>
+  <div>
+    <label for="title">Title</label>
+    <input id="title" type="text" {{on "input" (pick "target.value" (set this "title"))}} />
+  </div>
+  <div>
+    <label for="orderNumber">Order Number</label>
+    <input id="orderNumber" type="number" {{on "input" (pick "target.value" (set this "orderNumber"))}} />
+  </div>
+  <button type="submit">Create Topic</button>
+</form>

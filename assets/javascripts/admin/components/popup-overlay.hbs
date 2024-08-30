@@ -1,0 +1,5 @@
+<div class="popup-overlay" id="popup-overlay" {{on "click" this.closePopup}}>
+    <div class="popup-content" {{on "click" this.stopPropagation}}>
+        {{yield}}
+    </div>
+</div>

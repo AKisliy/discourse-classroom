@@ -1,0 +1,46 @@
+<PopupOverlay @onClose={{this.onClose}}>
+    <span class="popup-title">{{if @popupTitle @popupTitle "VideoPopup"}}</span>
+    <PopupInputField 
+        @fieldName={{i18n "video_popup.fields.name"}}
+        @placeholder={{i18n "video_popup.placeholders.name"}} 
+        @updateTarget={{this.updateVideoName}} 
+        @targetValue={{@videoDetails.name}}
+        @maxLen=150
+        @needCounter={{true}}
+    />
+    <div class="popup-field">
+        <span class="popup-field-name">{{i18n "video_popup.fields.description"}}</span>
+        <CharCounter @value={{@videoDetails.description}} @max=500>
+            <DEditor 
+                @value={{@videoDetails.description}} 
+                @placeholder="video_popup.placeholders.description"
+            />
+        </CharCounter>
+    </div>
+    <PopupInputField 
+        @fieldName={{i18n "video_popup.fields.link"}}
+        @placeholder={{i18n "video_popup.placeholders.link"}} 
+        @updateTarget={{this.updateLink}} 
+        @targetValue={{@videoDetails.link}}
+    />
+    <PopupInputField 
+        @fieldName={{i18n "video_popup.fields.transcript"}}
+        @placeholder={{i18n "video_popup.placeholders.transcript"}} 
+        @updateTarget={{this.updateTranscript}} 
+        @targetValue={{@videoDetails.transcript}}
+    />
+    <div class="popup-field">
+        <span class="popup-field-name">{{i18n "video_popup.fields.notes"}}</span>
+        <CharCounter @value={{@videoDetails.notes}} @max=500>
+            <DEditor 
+                @value={{@videoDetails.notes}} 
+                @placeholder="video_popup.placeholders.notes"/>
+        </CharCounter>
+    </div>
+    <PopupButtons 
+        @onClose={{this.onClose}} 
+        @onAdd={{this.onRightButtonClick}} 
+        @rightButtonClass={{@rightButtonClass}}
+        @rightButtonText={{@rightButtonText}}
+    />
+</PopupOverlay>

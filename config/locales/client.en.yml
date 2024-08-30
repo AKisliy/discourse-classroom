@@ -1,0 +1,79 @@
+en:
+  js:
+    add_topic:
+      title: "Add topic"
+      erorrs:
+        empty_topic_title: ""
+        title_len_exceed: ""
+    video_popup:
+      fields:
+        name: "Name"
+        description: "Description"
+        link: "Video"
+        transcript: "Transcript"
+        notes: "Notes"
+      placeholders:
+        name: "Video name"
+        description: "Video description"
+        link: "Add YouTube link"
+        transcript: "Add transcript (optional)"
+        notes: "Add notes (optional)"
+    topic:
+      popups:
+        delete:
+          title: "Delete topic"
+          description: "Are you sure you want to delete the topic? You can't undo this."
+        edit:
+          title: "Edit topic"
+          placeholders:
+            title: "Topic title"
+
+    video:
+      popups:
+        delete:
+          title: "Delete video"
+          description: "Do you want to delete video?" 
+    
+    course:
+      main_info:
+        members: "members"
+        author: "Author"
+        price:
+          free: "Free"
+      popups:
+        edit:
+          title: "Edit course"
+          placeholders:
+            title: "Course name"
+            description: "Course description"
+          fields:
+            title: "Name"
+            description: "Description"
+        delete:
+          title: "Delete course?"
+          description: "Are you sure you want to delete the course? You can’t undo this."
+        leave:
+          title: "Leave course?"
+          description: "Are you sure you want to leave the course? You progress will be lost."
+    topic_popup:
+      fields:
+      placeholders:
+        title: "Topic title"
+      delete_popup:
+
+    edit_video:
+      title: "Edit video"
+    add_video:
+      title: "Add video"
+    buttons:
+      save: "Save"
+      cancel: "Cancel"
+      add: "Add"
+      delete: "Delete"
+      join: "Join"
+      leave: "Leave"
+    erorrs:
+      fields:
+        empty: "Please, enter the value"
+        len_exceed: "Length can't can't exceed "
+

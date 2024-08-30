@@ -1,0 +1,118 @@
+.add-topic-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; // Ensure it is above other elements
+  }
+  
+.add-topic-popup-content {
+  position: relative;
+  background-color: #fff;
+  color: black;
+  padding: 32px;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  max-width: 100%;
+}
+
+.add-topic-title{
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.add-topic-input {
+  display: block;
+  width: 100%;
+  border-radius: 12px;
+  background-clip: padding-box;
+  border-color: var(--primary);
+  border-radius: 0.25rem;
+  margin-top: 16px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.add-topic-input::placeholder {
+  color: #212529;
+  opacity: 0.4;
+}
+
+.add-topic-input:focus {
+  color: var(--primary);
+  background-color: #fff;
+  border-color: var(--tertiary);
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(158, 158, 158, 0.25);
+}
+
+.add-topic-input:disabled,
+.add-topic-input[readonly] {
+  background-color: #f5f5f5;
+  opacity: 1;
+}
+  
+.error-message {
+  color: red;
+  margin-bottom: 10px;
+}
+
+/* Buttons */
+
+.add-topic-buttons {
+  display: flex;
+  margin-top: 16px;
+  justify-items: flex-end;
+  //position: absolute;
+  gap: 10px;
+  float: right;
+}
+
+.add-topic-button {
+  right: 0;
+  padding: 16px 32px;
+  background-color: #179E7E;
+  border-radius: 16px;
+  border: 1px solid #179E7E;
+  color: white;
+
+  &:hover{
+    background-color: white;
+    color: black;
+    border: 1px solid #179E7E;
+  }
+}
+
+.cancel-topic-button {
+  border: none;
+  background-color: white;
+
+  &:hover{
+    color: red;
+  }
+}
+
+/* Char counter */
+.char-counter {
+  .char-counter__ratio{
+    color: #CCCCCC;
+  }
+
+  &.exceeded {
+    .char-counter__ratio{
+      color: red;
+    }
+
+    .add-topic-input{
+      border: 1px solid red;
+    }
+    
+  }
+}
+
+  

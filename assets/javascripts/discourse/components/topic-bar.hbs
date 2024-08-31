@@ -1,5 +1,11 @@
 <li class="topic-bar">
   <div class="topic-bar-main-info">
+      <div class="topic-buttons-left">
+        {{#if this.currentUser.admin}}
+            <span class="topic-sandwich">{{dIcon "bars"}}</span>
+            {{!-- <span class="topic-video-sandwich" {{on "mousedown" this.dragVideo}}{{on "mousemove" this.moveVideoBar}}>{{dIcon "bars"}}</span> --}}
+        {{/if}}
+      </div>
     <span class="topic-bar-title">{{@topic.title}}</span>
     <div class="topic-bar-buttons">
       {{#if this.currentUser.admin}}

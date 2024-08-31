@@ -12,18 +12,18 @@
   </div>
   {{#if this.isOpen}}
   <div class="topic-bar-videos">
-      <DragSortList
+      {{!-- <DragSortList
         @items = {{@videos}}
         @dragEndAction = {{this.dragEnd}}
         as |item|
       >
         {{item.title}}
-      </DragSortList>
-    {{!-- {{#each @videos as |video| }}
+      </DragSortList> --}}
+    {{#each @videos as |video| }}
       <TopicVideo @video={{video}} />
-    {{else}} --}}
+    {{else}}
       <div class="topic-bar-title">No videos in this topic :(</div>
-    {{!-- {{/each}} --}}
+    {{/each}}
   </div>
   {{/if}}
 </li>

@@ -1,8 +1,8 @@
 import Component from "@glimmer/component";
 import { tracked } from "@glimmer/tracking";
 import { action } from "@ember/object";
-import { service } from '@ember/service';
 import { next } from '@ember/runloop';
+import { service } from '@ember/service';
 import AddVideoPopupComponent from "../../admin/components/add-video-popup";
 import DeleteTopicPopup from "../../admin/components/delete-topic-popup";
 import EditTopicPopup from "../../admin/components/edit-topic-popup";
@@ -13,17 +13,17 @@ export default class TopicBar extends Component {
     @service modal;
 
     @tracked isOpen = false;
-    
+
     get topic(){
         return this.args.topic;
     }
 
-    get topicBarLinks(){ 
+    get topicBarLinks(){
         return [
           { title: "Edit topic", icon:"far-edit", action: this.openPopup.bind(this, EditTopicPopup)},
           { title: "Add video", icon:"plus", action: this.openPopup.bind(this, AddVideoPopupComponent) },
           { title: "Delete topic", icon: "far-trash-alt", action: this.openPopup.bind(this, DeleteTopicPopup)}
-        ]
+        ];
     }
 
     @action
@@ -32,13 +32,13 @@ export default class TopicBar extends Component {
 
         next(() => {
             if(this.isOpen)
-                this.loadVideos()
+                {this.loadVideos();}
         });
     }
 
     @action
     dragEnd({sourceList, sourceIndex, targetList, targetIndex}){
-        if (sourceList === targetList && sourceIndex === targetIndex) return
+        if (sourceList === targetList && sourceIndex === targetIndex) {return;}
 
         const item = sourceList.objectAt(sourceIndex);
 
@@ -51,8 +51,8 @@ export default class TopicBar extends Component {
     }
 
     loadVideos(){
-        var youTubeVideos = document.querySelectorAll('.youtube');
-        for (var i = 0; i < youTubeVideos.length; i++) {
+        let youTubeVideos = document.querySelectorAll('.youtube');
+        for (let i = 0; i < youTubeVideos.length; i++) {
             //add click event that will load YouTube video
             youTubeVideos[i].addEventListener( "click", function() {
                 this.innerHTML = '<iframe frameBorder="0" width="200" height="112.5"' +

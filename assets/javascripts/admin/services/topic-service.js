@@ -1,16 +1,15 @@
-import Service from '@ember/service';
+import  Service, { service } from '@ember/service';
 import { ajax } from "discourse/lib/ajax";
 import { popupAjaxError } from "discourse/lib/ajax-error";
-import { service } from '@ember/service';
 
 export default class TopicService extends Service {
     @service eventBus;
 
     addTopic(data) {
         let classroom_topic = { title: data.title, order_number: 1};
-        return ajax("/classroom/classroom_topics"	, { 
+        return ajax("/classroom/classroom_topics"	, {
           method: "POST",
-          data: JSON.stringify({ classroom_topic: classroom_topic }),
+          data: JSON.stringify({ classroom_topic }),
           contentType: "application/json",
         }).then((response) => {
           this.eventBus.trigger(this.eventBus.topicActions.onAdded, response);
@@ -18,7 +17,7 @@ export default class TopicService extends Service {
     }
 
     saveChanges(newData) {
-      return ajax(`/classroom/classroom_topics/${newData.id}`	, { 
+      return ajax(`/classroom/classroom_topics/${newData.id}`	, {
         method: "PATCH",
         data: JSON.stringify({ classroom_topic: newData }),
         contentType: "application/json",

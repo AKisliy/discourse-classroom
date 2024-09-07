@@ -1,6 +1,6 @@
 import Component from '@glimmer/component';
-import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
+import { action } from '@ember/object';
 import { service } from '@ember/service';
 
 export default class EditCoursePopupComponent extends Component {
@@ -8,10 +8,13 @@ export default class EditCoursePopupComponent extends Component {
     @service adminCourseService;
     @service modal;
 
-    course = {}
     @tracked title = this.course.title;
-    @tracked description = this.course.description;
-    @tracked imageLink = this.course.imageLink;
+@tracked description = this.course.description;
+@tracked imageLink = this.course.imageLink;
+course = {};
+
+
+
 
     constructor(){
         super(...arguments);
@@ -44,7 +47,7 @@ export default class EditCoursePopupComponent extends Component {
             title: this.title,
             description: this.description,
             imageLink: this.imageLink
-        }
+        };
         this.adminCourseService.updateCourse(course);
         this.onClose();
     }

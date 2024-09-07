@@ -1,6 +1,6 @@
 import Component from "@glimmer/component";
-import { service } from '@ember/service';
 import { action } from "@ember/object";
+import { service } from '@ember/service';
 
 export default class LeaveCourse extends Component {
     @service modal;

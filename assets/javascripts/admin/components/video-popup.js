@@ -1,6 +1,5 @@
 import Component from "@glimmer/component";
 import { action } from "@ember/object";
-import { tracked } from '@glimmer/tracking';
 
 export default class VideoPopup extends Component {
 
@@ -29,8 +28,6 @@ export default class VideoPopup extends Component {
     onClose(){
         if(this.args.onClose){
             this.args.onClose();
-        } else {
-            console.error("No on close provided to VideoPopup");
         }
     }
 
@@ -38,8 +35,6 @@ export default class VideoPopup extends Component {
     onRightButtonClick(){
         if(this.args.onRightButtonClick){
             this.args.onRightButtonClick();
-        } else {
-            console.error("No right button click was provided");
         }
     }
 }

@@ -6,7 +6,6 @@ export default class ClassroomRoute extends DiscourseRoute{
   @service store;
 
   async model() {
-    console.log(this.store);
     try {
       const response = await ajax("/classroom/classroom_topics", {
           method: "GET",
@@ -14,7 +13,6 @@ export default class ClassroomRoute extends DiscourseRoute{
         });
       return response;
     } catch (e) {
-      console.log('Error fetching classroom topics:', e);
       this.router.replaceWith("/404");
     }
   }
@@ -22,4 +20,4 @@ export default class ClassroomRoute extends DiscourseRoute{
   setupController(controller, model) {
     this.controllerFor("classroom-index").set('topics', model.classroom_topics);
   }
-};
+}

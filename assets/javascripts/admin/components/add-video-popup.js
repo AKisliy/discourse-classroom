@@ -1,8 +1,7 @@
 import Component from '@glimmer/component';
-import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
+import EmberObject, { action } from '@ember/object';
 import { service } from '@ember/service';
-import EmberObject from '@ember/object';
 
 export default class AddVideoPopupComponent extends Component {
     @service videoService;
@@ -18,9 +17,7 @@ export default class AddVideoPopupComponent extends Component {
 
     @action
     onAdd(){
-        console.log(this.args.model);
-        if(!this.args.model){
-            console.error("Classroom topic id wasn't provided to AddVideoPopup");
+        if(!this.args.model) {
             return;
         }
         let topic = this.args.model.topic;
@@ -31,7 +28,7 @@ export default class AddVideoPopupComponent extends Component {
             transcript: this.videoDetails.transcript,
             notes: this.videoDetails.notes,
             classroom_topic_id: topic.id
-        }
+        };
         this.videoService.addVideo(videoData);
         this.args.closeModal();
     }

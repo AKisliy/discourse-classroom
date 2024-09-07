@@ -1,8 +1,7 @@
 import Component from '@glimmer/component';
-import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
+import EmberObject, { action } from '@ember/object';
 import { service } from '@ember/service';
-import EmberObject from '@ember/object';
 
 export default class EditVideoPopup extends Component {
     @service videoService;
@@ -17,8 +16,7 @@ export default class EditVideoPopup extends Component {
 
     @action
     onSave(){
-        if(!this.videoDetails.classroom_topic_id){
-            console.error("Classroom topic id wasn't provided to AddVideoPopup");
+        if(!this.videoDetails.classroom_topic_id) {
             return;
         }
         this.videoDetails.link = this.videoService.getYoutubeEmbedId(this.videoDetails.link);

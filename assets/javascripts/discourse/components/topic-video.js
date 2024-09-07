@@ -13,13 +13,13 @@ export default class TopicVideo extends Component {
         initY: 0,
         videoBar: null,
         containerOffsetY: 0
-    }
+    };
 
     get videoButtonLinks(){
         return [
           { title: "Edit video", icon:"far-edit", action: this.openPopup.bind(this, EditVideoPopup) },
           { title: "Delete video", icon:"far-trash-alt", action: this.openPopup.bind(this, DeleteVideoPopup)},
-        ]
+        ];
     }
 
     @action
@@ -34,12 +34,11 @@ export default class TopicVideo extends Component {
 
     @action
     dragVideo(event){
-        
+
         this.dragVideoOptions.isDragging = true;
 
         // our container will be our bars
         let container = event.target.closest(".topic-bar-videos");
-        console.log(container);
         // save parameters of container
         container.style.width = container.offsetWidth + "px";
         container.style.height = container.offsetHeight + "px";
@@ -58,11 +57,10 @@ export default class TopicVideo extends Component {
     }
 
     @action
-    moveVideoBar(event){
-        console.log("called");
-        if(!this.dragVideoOptions.isDragging)
+    moveVideoBar(){
+        if(!this.dragVideoOptions.isDragging) {
             return;
-        console.log("im here");
+        }
     }
 
 

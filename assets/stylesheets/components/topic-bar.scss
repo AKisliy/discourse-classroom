@@ -1,74 +1,72 @@
-.topic-bar{
-    background-color: var(--header_background);
-    display: flex;
-    margin-bottom: 32px;
-    border-radius: 12px;
-    padding: 16px;
-    justify-content: space-between;
-    flex-direction: column;
-    transition: margin 0.25s;
+.topic-bar {
+  background-color: var(--header_background);
+  display: flex;
+  margin-bottom: 32px;
+  border-radius: 12px;
+  padding: 16px;
+  justify-content: space-between;
+  flex-direction: column;
+  transition: margin 0.25s;
 }
 
 .topic-bar-main-info {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+
+  .topic-bar-title {
+    color: var(--primary);
+    flex-grow: 1;
+  }
+
+  .topic-bar-buttons {
+    float: inline-end;
     display: flex;
     align-items: center;
-    width: 100%;
-    justify-content: space-between;
-
-    .topic-bar-title{
-        color: var(--primary);
-        flex-grow: 1;
-    }
-
-    .topic-bar-buttons{
-        float: inline-end;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        // .topic-bar-caret{
-        // }
-    }
+    gap: 8px;
+    // .topic-bar-caret{
+    // }
+  }
 }
-
-
 
 /* Buttons */
-.topic-bar-button-dropdown{
-    .dropdown-toggle-button.btn.no-text.btn-icon{
-        background-color: inherit;
-        border-radius: 50%;
+.topic-bar-button-dropdown {
+  .dropdown-toggle-button.btn.no-text.btn-icon {
+    background-color: inherit;
+    border-radius: 50%;
 
-        &:hover{
-            .d-icon{
-                color: var(--tertiary)
-            }
-        }
-    }
-
-    &:hover{
-        .dropdown-menu {
-            transform: scale(1);
-        }
-    }
-}
-
-.topic-bar-videos{
-    display: flex;
-    flex-direction: column;
-    max-width: inherit;
-}
-
-.topic-buttons-left{
-    display: flex;
-    justify-content: flex-start;
-    flex-grow: 0;
-    align-items: center;
-    margin-right: 8px;
-
-    .topic-sandwich{
-      &:hover{
+    &:hover {
+      .d-icon {
         color: var(--tertiary);
-        cursor: grab;
       }
     }
+  }
+
+  &:hover {
+    .dropdown-menu {
+      transform: scale(1);
+    }
+  }
+}
+
+.topic-bar-videos {
+  display: flex;
+  flex-direction: column;
+  max-width: inherit;
+}
+
+.topic-buttons-left {
+  display: flex;
+  justify-content: flex-start;
+  flex-grow: 0;
+  align-items: center;
+  margin-right: 8px;
+
+  .topic-sandwich {
+    &:hover {
+      color: var(--tertiary);
+      cursor: grab;
+    }
+  }
 }

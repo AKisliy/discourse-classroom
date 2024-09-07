@@ -1,44 +1,41 @@
 <div class="classroom-sidebar">
-    <img src={{@course.imageLink}} alt="Course Image" class="course-image">
-    <h2>{{@course.title}}</h2>
-    <p>{{@course.description}}</p>
-    {{#if this.currentUser.admin}}
-      <div class="classroom-button-dropdown">
-        <ClassroomButton @links={{this.classroomButtonAdminLinks}} />
-      </div>
+  <img src={{@course.imageLink}} alt="Course Image" class="course-image" />
+  <h2>{{@course.title}}</h2>
+  <p>{{@course.description}}</p>
+  {{#if this.currentUser.admin}}
+    <div class="classroom-button-dropdown">
+      <ClassroomButton @links={{this.classroomButtonAdminLinks}} />
+    </div>
+  {{else}}
+    {{#unless this.currentUser}}
+      <DButton
+        @class="join-button no-blur"
+        @action={{route-action "showCreateAccount"}}
+        @label="buttons.join"
+      />
     {{else}}
-      {{#unless this.currentUser}}
-        <DButton
-            @class="join-button no-blur"
-            @action={{route-action "showCreateAccount"}}
-            @label="buttons.join"
-        />
-      {{else}}
       <div class="classroom-button-dropdown">
         <ClassroomButton @links={{this.classroomButtonLinks}} />
       </div>
-      {{/unless}}
-    {{/if}}
-    <ul class="course-details">
-      <li>
-        <div class="icon">{{dIcon "check-circle"}}</div>
-        {{i18n "course.main_info.price.free"}}
-      </li>
-      <li>
-        <div class="icon">{{dIcon "notification.group_mentioned"}}</div>
-        {{concat @course.membersCount " " (i18n "course.main_info.members")}}</li>
-      <li>
-        <div class="icon"> 
-          <a
-            href={{@course.author.path}}
-            data-user-card={{@course.author.username}}
-            class={{@course.author.extraClasses}}
-          >{{avatar
-            @course.author
-            imageSize="small"
-          }}</a>
-        </div>
-        {{concat (i18n "course.main_info.author") ": " @course.author.username}}
-      </li>
-    </ul>
-  </div>
+    {{/unless}}
+  {{/if}}
+  <ul class="course-details">
+    <li>
+      <div class="icon">{{dIcon "check-circle"}}</div>
+      {{i18n "course.main_info.price.free"}}
+    </li>
+    <li>
+      <div class="icon">{{dIcon "notification.group_mentioned"}}</div>
+      {{concat @course.membersCount " " (i18n "course.main_info.members")}}</li>
+    <li>
+      <div class="icon">
+        <a
+          href={{@course.author.path}}
+          data-user-card={{@course.author.username}}
+          class={{@course.author.extraClasses}}
+        >{{avatar @course.author imageSize="small"}}</a>
+      </div>
+      {{concat (i18n "course.main_info.author") ": " @course.author.username}}
+    </li>
+  </ul>
+</div>

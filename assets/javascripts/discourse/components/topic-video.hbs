@@ -1,32 +1,35 @@
 <li class="topic-video">
-    <div class="video-buttons-left">
-        {{#if this.currentUser.admin}}
-            <span class="topic-video-sandwich">{{dIcon "bars"}}</span>
-            {{!-- <span class="topic-video-sandwich" {{on "mousedown" this.dragVideo}}{{on "mousemove" this.moveVideoBar}}>{{dIcon "bars"}}</span> --}}
-        {{/if}}
+  <div class="video-buttons-left">
+    {{#if this.currentUser.admin}}
+      <span class="topic-video-sandwich">{{dIcon "bars"}}</span>
+      {{!-- <span class="topic-video-sandwich" {{on "mousedown" this.dragVideo}}{{on "mousemove" this.moveVideoBar}}>{{dIcon "bars"}}</span> --}}
+    {{/if}}
+  </div>
+  <div class="video-preview">
+    <div
+      class="youtube"
+      data-embed={{@video.link}}
+      itemprop="video"
+      itemscope=""
+      itemtype="http://schema.org/VideoObject"
+    >
+      <div class="play"></div>
+      <meta itemprop="embedURL" content={{this.getEmbedUrl @video.link}} />
+      <img
+        style="cursor: pointer;"
+        src={{this.getPreviewImageUrl @video.link}}
+      />
     </div>
-    <div class="video-preview">
-        <div 
-            class="youtube"  
-            data-embed={{@video.link}}
-            itemprop="video"
-            itemscope=""
-            itemtype="http://schema.org/VideoObject"
-        >
-            <div class="play"></div> 
-            <meta itemprop="embedURL" content={{this.getEmbedUrl @video.link}} />
-            <img style="cursor: pointer;" src={{this.getPreviewImageUrl @video.link}} />
-        </div>
+  </div>
+  <div class="video-info">
+    <div class="topic-video-title">{{@video.name}}</div>
+    <CookText class="topic-video-description" @rawText={{@video.description}} />
+  </div>
+  <div class="video-buttons">
+    <div class="video-button-dropdown">
+      {{#if this.currentUser.admin}}
+        <ClassroomButton @links={{this.videoButtonLinks}} />
+      {{/if}}
     </div>
-    <div class="video-info">
-        <div class="topic-video-title">{{@video.name}}</div>
-        <CookText class="topic-video-description" @rawText={{@video.description}} />
-    </div>
-    <div class="video-buttons">
-        <div class="video-button-dropdown">
-            {{#if this.currentUser.admin}}
-                <ClassroomButton @links={{this.videoButtonLinks}} />
-            {{/if}}
-        </div>
-    </div>
+  </div>
 </li>

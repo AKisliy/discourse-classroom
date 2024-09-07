@@ -32,8 +32,8 @@ en:
       popups:
         delete:
           title: "Delete video"
-          description: "Do you want to delete video?" 
-    
+          description: "Do you want to delete video?"
+
     course:
       main_info:
         members: "members"
@@ -76,4 +76,3 @@ en:
       fields:
         empty: "Please, enter the value"
         len_exceed: "Length can't can't exceed "
-

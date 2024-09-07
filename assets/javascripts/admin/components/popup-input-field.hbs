@@ -1,12 +1,24 @@
 <div class="popup-field">
-    {{#if @fieldName}}
-        <span class="popup-field-name">{{@fieldName}}</span>
-    {{/if}}
-    {{#if @needCounter}}
-        <CharCounter @value={{@targetValue}} @max={{@maxLen}}>
-            <input class="popup-input" type="text" placeholder={{@placeholder}} {{on "input" @updateTarget}} value={{@targetValue}}>
-        </CharCounter>
-    {{else}}
-        <input class="popup-input" type="text" placeholder={{@placeholder}} {{on "input" @updateTarget}} value={{@targetValue}}>
-    {{/if}}
+  {{#if @fieldName}}
+    <span class="popup-field-name">{{@fieldName}}</span>
+  {{/if}}
+  {{#if @needCounter}}
+    <CharCounter @value={{@targetValue}} @max={{@maxLen}}>
+      <input
+        class="popup-input"
+        type="text"
+        placeholder={{@placeholder}}
+        {{on "input" @updateTarget}}
+        value={{@targetValue}}
+      />
+    </CharCounter>
+  {{else}}
+    <input
+      class="popup-input"
+      type="text"
+      placeholder={{@placeholder}}
+      {{on "input" @updateTarget}}
+      value={{@targetValue}}
+    />
+  {{/if}}
 </div>

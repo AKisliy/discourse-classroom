@@ -1,9 +1,14 @@
 <div class="popup-buttons">
-      <button class="cancel-popup-button" {{on "click" @onClose}}>{{i18n "buttons.cancel"}}</button>
-      <button class={{concatClass
-                        "right-popup-button" 
-                        (if @rightButtonClass @rightButtonClass)}} 
-      {{on "click" @onAdd}}>
-            {{i18n (concat "buttons." (if @rightButtonClass @rightButtonClass "add"))}}
-      </button>
+  <button class="cancel-popup-button" {{on "click" @onClose}}>{{i18n
+      "buttons.cancel"
+    }}</button>
+  <button
+    class={{concatClass
+      "right-popup-button"
+      (if @rightButtonClass @rightButtonClass)
+    }}
+    {{on "click" @onAdd}}
+  >
+    {{i18n (concat "buttons." (if @rightButtonClass @rightButtonClass "add"))}}
+  </button>
 </div>

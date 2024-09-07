@@ -1,14 +1,14 @@
 @mixin dropdown() {
-    position: absolute;
-    background-color: white;
-    border: none;
-    box-shadow: 0 12px 12px rgba(0, 0, 0, 0.15);
-    z-index: z("header") + 1;
-    padding: 0.5em;
+  position: absolute;
+  background-color: white;
+  border: none;
+  box-shadow: 0 12px 12px rgba(0, 0, 0, 0.15);
+  z-index: z("header") + 1;
+  padding: 0.5em;
 }
 
-@keyframes scaleit{
-    from {
-        transform: translate(-50%, 0) scale(1);
-    }
+@keyframes scaleit {
+  from {
+    transform: translate(-50%, 0) scale(1);
+  }
 }

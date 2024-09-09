@@ -1,44 +1,44 @@
 <PopupOverlay @onClose={{this.onClose}}>
-    <span class="popup-title">{{i18n "course.popups.edit.title"}}</span>
-    <PopupInputField 
-        @fieldName={{i18n "course.popups.edit.fields.title"}}
-        @placeholder={{i18n "course.popups.edit.placeholders.title"}}
-        @updateTarget={{this.updateTitle}} 
-        @targetValue={{this.title}}
-        @maxLen=50
-        @needCounter={{true}}
-    />
-    <PopupInputField
-        @fieldName={{i18n "course.popups.edit.fields.description"}}
-        @placeholder={{i18n "course.popups.edit.placeholders.description"}}
-        @updateTarget={{this.updateDescription}}
-        @targetValue={{this.description}}
-        @maxLen=150
-        @needCounter={{true}}
-    />
-    <div class="popup-image-container">
-        <span class="popup-field-name">Cover</span>
-        <div class="image-uploader-container">
-            {{!-- <img src={{this.imageLink}} alt="Course Image" class="course-image">
+  <span class="popup-title">{{i18n "course.popups.edit.title"}}</span>
+  <PopupInputField
+    @fieldName={{i18n "course.popups.edit.fields.title"}}
+    @placeholder={{i18n "course.popups.edit.placeholders.title"}}
+    @updateTarget={{this.updateTitle}}
+    @targetValue={{this.title}}
+    @maxLen="50"
+    @needCounter={{true}}
+  />
+  <PopupInputField
+    @fieldName={{i18n "course.popups.edit.fields.description"}}
+    @placeholder={{i18n "course.popups.edit.placeholders.description"}}
+    @updateTarget={{this.updateDescription}}
+    @targetValue={{this.description}}
+    @maxLen="150"
+    @needCounter={{true}}
+  />
+  <div class="popup-image-container">
+    <span class="popup-field-name">Cover</span>
+    <div class="image-uploader-container">
+      {{!-- <img src={{this.imageLink}} alt="Course Image" class="course-image">
             <ImagesUploader
                 @uploading={{this.uploading}}
                 @done={{this.uploadDone}}
                 class="pull-right"
             /> --}}
-            <UppyImageUploader
-                @imageWidth=300
-                @imageUrl={{this.imageLink}}
-                @type="course_cover"
-                @id="course-cover-uploader"
-                @onUploadDone={{this.uploadDone}}
-            />
-        </div>
+      <UppyImageUploader
+        @imageWidth="300"
+        @imageUrl={{this.imageLink}}
+        @type="course_cover"
+        @id="course-cover-uploader"
+        @onUploadDone={{this.uploadDone}}
+      />
     </div>
-    <PopupButtons 
-        @onClose={{this.onClose}} 
-        @onAdd={{this.onSave}} 
-        @rightButtonText={{i18n "buttons.save"}}
-        @rightButtonClass="save"
-    />
+  </div>
+  <PopupButtons
+    @onClose={{this.onClose}}
+    @onAdd={{this.onSave}}
+    @rightButtonText={{i18n "buttons.save"}}
+    @rightButtonClass="save"
+  />
 
 </PopupOverlay>

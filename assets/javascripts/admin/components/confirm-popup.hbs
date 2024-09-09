@@ -1,12 +1,12 @@
 <PopupOverlay @onClose={{this.onClose}} @classname="confirm-popup-content">
-    <div class="popup-title">{{@title}}</div>
-    <div class="popup-field">{{@description}}</div>
-    <div class="confirm-popup-buttons">
-      <PopupButtons 
-        @onClose={{this.onClose}} 
-        @onAdd={{this.onRightButtonAction}} 
-        @rightButtonClass={{@rightButtonClass}}
-        @rightButtonText={{@rightButtonText}}
-      />
-    </div>
+  <div class="popup-title">{{@title}}</div>
+  <div class="popup-field">{{@description}}</div>
+  <div class="confirm-popup-buttons">
+    <PopupButtons
+      @onClose={{this.onClose}}
+      @onAdd={{this.onRightButtonAction}}
+      @rightButtonClass={{@rightButtonClass}}
+      @rightButtonText={{@rightButtonText}}
+    />
+  </div>
 </PopupOverlay>

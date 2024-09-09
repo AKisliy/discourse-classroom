@@ -1,24 +1,24 @@
 <PopupOverlay @onClose={{this.onClose}} @classname="add-topic-popup-content">
-    <span class="popup-title">{{i18n "add_topic.title"}}</span>
-    <PopupInputField 
-      @targetValue={{this.title}} 
-      @placeholder={{i18n "topic_popup.placeholders.title"}} 
-      @updateTarget={{this.updateTitle}} 
-      @needCounter={{true}}
-      @maxLen=50
-    />
-    {{#if this.showErrorMessage}}
-      <div class="error-message">{{i18n "errors.fields.empty"}}</div>
-    {{/if}}
-    {{#if this.showLenLimitError}}
-      <div class="error-message">{{i18n "errors.fields.len_exceed"}}</div>
-    {{/if}}
-    <PopupButtons 
-        @onClose={{this.onClose}} 
-        @onAdd={{this.saveTopic}} 
-        @rightButtonClass="add"
-    />
-</PopupOverlay> 
+  <span class="popup-title">{{i18n "add_topic.title"}}</span>
+  <PopupInputField
+    @targetValue={{this.title}}
+    @placeholder={{i18n "topic_popup.placeholders.title"}}
+    @updateTarget={{this.updateTitle}}
+    @needCounter={{true}}
+    @maxLen="50"
+  />
+  {{#if this.showErrorMessage}}
+    <div class="error-message">{{i18n "errors.fields.empty"}}</div>
+  {{/if}}
+  {{#if this.showLenLimitError}}
+    <div class="error-message">{{i18n "errors.fields.len_exceed"}}</div>
+  {{/if}}
+  <PopupButtons
+    @onClose={{this.onClose}}
+    @onAdd={{this.saveTopic}}
+    @rightButtonClass="add"
+  />
+</PopupOverlay>
 {{!-- <DModal
   class="popup-container"
   @closeModal={{this.onClose}}

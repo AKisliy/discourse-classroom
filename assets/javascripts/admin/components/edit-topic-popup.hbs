@@ -1,16 +1,16 @@
 <PopupOverlay @onClose={{@closeModal}}>
-    <span class="popup-title">{{i18n "topic.popups.edit.title"}}</span>
-    <PopupInputField 
-        @placeholder={{i18n "topic.popups.edit.placeholders.title"}}
-        @updateTarget={{this.updateTopicTitle}} 
-        @targetValue={{@model.topic.title}}
-        @maxLen=50
-        @needCounter={{true}}
-    />
-    <PopupButtons 
-        @onClose={{@closeModal}} 
-        @onAdd={{this.onSave}} 
-        @rightButtonText={{i18n "buttons.save"}}
-        @rightButtonClass="save"
-    />
+  <span class="popup-title">{{i18n "topic.popups.edit.title"}}</span>
+  <PopupInputField
+    @placeholder={{i18n "topic.popups.edit.placeholders.title"}}
+    @updateTarget={{this.updateTopicTitle}}
+    @targetValue={{@model.topic.title}}
+    @maxLen="50"
+    @needCounter={{true}}
+  />
+  <PopupButtons
+    @onClose={{@closeModal}}
+    @onAdd={{this.onSave}}
+    @rightButtonText={{i18n "buttons.save"}}
+    @rightButtonClass="save"
+  />
 </PopupOverlay>

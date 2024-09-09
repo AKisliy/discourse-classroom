@@ -10,10 +10,13 @@ export default class ClassroomSidebar extends Component {
   @service eventBus;
   @service modal;
 
+  adminButtonsPrefix = "buttons.action_buttons.admin.";
+  userButtonsPrefix = "buttons.action_buttons.user.";
+
   get classroomButtonAdminLinks() {
     return [
       {
-        title: "Edit course",
+        title: this.adminButtonsPrefix + "edit_course",
         icon: "far-edit",
         action: () =>
           this.modal.show(EditCoursePopupComponent, {
@@ -21,12 +24,12 @@ export default class ClassroomSidebar extends Component {
           }),
       },
       {
-        title: "Add topic",
+        title: this.adminButtonsPrefix + "add_topic",
         icon: "plus",
         action: () => this.modal.show(AddTopicPopupComponent),
       },
       {
-        title: "Delete course",
+        title: this.adminButtonsPrefix + "delete_course",
         icon: "far-trash-alt",
         action: () => this.modal.show(DeleteCoursePopup),
       }, // we should consider how we'll process deleting (smth with containers?)
@@ -37,7 +40,7 @@ export default class ClassroomSidebar extends Component {
   get classroomButtonLinks() {
     return [
       {
-        title: "Leave course",
+        title: this.userButtonsPrefix + "leave_course",
         icon: "user_menu.replies",
         action: () => this.modal.show(LeaveCourse),
       },

@@ -14,6 +14,8 @@ export default class TopicBar extends Component {
 
   @tracked isOpen = false;
 
+  topicBarButtonsLocalesPrefix = "buttons.action_buttons.topic.";
+
   get topic() {
     return this.args.topic;
   }
@@ -21,17 +23,17 @@ export default class TopicBar extends Component {
   get topicBarLinks() {
     return [
       {
-        title: "Edit topic",
+        title: this.topicBarButtonsLocalesPrefix + "edit",
         icon: "far-edit",
         action: this.openPopup.bind(this, EditTopicPopup),
       },
       {
-        title: "Add video",
+        title: this.topicBarButtonsLocalesPrefix + "add_video",
         icon: "plus",
         action: this.openPopup.bind(this, AddVideoPopupComponent),
       },
       {
-        title: "Delete topic",
+        title: this.topicBarButtonsLocalesPrefix + "delete",
         icon: "far-trash-alt",
         action: this.openPopup.bind(this, DeleteTopicPopup),
       },

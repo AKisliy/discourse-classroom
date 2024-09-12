@@ -7,17 +7,17 @@
       <ClassroomButton @links={{this.classroomButtonAdminLinks}} />
     </div>
   {{else}}
-    {{#unless this.currentUser}}
+    {{#if this.currentUser}}
+      <div class="classroom-button-dropdown">
+        <ClassroomButton @links={{this.classroomButtonLinks}} />
+      </div>
+    {{else}}
       <DButton
         @class="join-button no-blur"
         @action={{route-action "showCreateAccount"}}
         @label="buttons.join"
       />
-    {{else}}
-      <div class="classroom-button-dropdown">
-        <ClassroomButton @links={{this.classroomButtonLinks}} />
-      </div>
-    {{/unless}}
+    {{/if}}
   {{/if}}
   <ul class="course-details">
     <li>

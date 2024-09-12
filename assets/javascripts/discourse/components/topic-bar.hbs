@@ -13,9 +13,14 @@
           <ClassroomButton @links={{this.topicBarLinks}} />
         </div>
       {{/if}}
-      <span class="topic-bar-caret" {{on "click" this.toggleIsOpen}}>{{dIcon
+      <DButton
+        @action={{this.toggleIsOpen}}
+        @icon={{if this.isOpen "chevron-up" "chevron-down"}}
+        class="topic-bar-caret"
+      />
+      {{!-- <span class="topic-bar-caret" {{on "click" this.toggleIsOpen}}>{{dIcon
           (if this.isOpen "chevron-up" "chevron-down")
-        }}</span>
+        }}</span> --}}
     </div>
   </div>
   {{#if this.isOpen}}

@@ -133,16 +133,32 @@
   align-items: center;
   padding: 4px 4px;
   border-radius: 8px;
-  display: block;
 
   &:hover {
     background-color: var(--primary-low);
   }
-}
 
-.classroom-button-link-title {
-  padding: 4px 4px;
-  margin: auto;
+  &-title{
+    padding: 4px 4px;
+    margin: auto;
+  }
+
+  .btn.btn-icon-text {
+    width: 100%;
+    background-color: inherit;
+    align-items: center;
+    justify-content: left;
+    display: flex;
+
+    &:hover {
+      background-color: var(--primary-low);
+      color: black;
+
+      .d-icon {
+        color: black;
+      }
+    }
+  }
 }
 
 .dropdown-menu {

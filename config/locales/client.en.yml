@@ -72,6 +72,21 @@ en:
       delete: "Delete"
       join: "Join"
       leave: "Leave"
+      action_buttons:
+        admin:
+          edit_course: "Edit course"
+          add_topic: "Add topic"
+          delete_course: "Delete course"
+        user:
+          leave_course: "Leave course"
+        video:
+          edit: "Edit video"
+          delete: "Delete video"
+        topic:
+          edit: "Edit topic"
+          add_video: "Add video"
+          delete: "Delete topic"
+
     erorrs:
       fields:
         empty: "Please, enter the value"

@@ -14,16 +14,17 @@ export default class TopicVideo extends Component {
     videoBar: null,
     containerOffsetY: 0,
   };
+  videoLocalesPrefix = "buttons.action_buttons.video.";
 
   get videoButtonLinks() {
     return [
       {
-        title: "Edit video",
+        title: this.videoLocalesPrefix + "edit",
         icon: "far-edit",
         action: this.openPopup.bind(this, EditVideoPopup),
       },
       {
-        title: "Delete video",
+        title: this.videoLocalesPrefix + "delete",
         icon: "far-trash-alt",
         action: this.openPopup.bind(this, DeleteVideoPopup),
       },

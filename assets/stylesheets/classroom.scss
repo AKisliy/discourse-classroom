@@ -161,6 +161,15 @@
   }
 }
 
+.btn:focus {
+  outline: none;
+}
+
+.btn:active {
+  background-color: var(--tertiary);
+  outline: none;
+}
+
 .dropdown-menu {
   @include dropdown;
   width: auto;

@@ -25,16 +25,16 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    .topic-bar-caret{
+    .topic-bar-caret {
       background-color: inherit;
 
-      &:hover{
-        .d-icon{
+      &:hover {
+        .d-icon {
           color: var(--tertiary);
         }
       }
 
-      &:active{
+      &:active {
         border-radius: 50%;
         background-color: var(--primary-low);
         opacity: 0.5;

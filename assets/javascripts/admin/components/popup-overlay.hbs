@@ -1,5 +1,16 @@
-<dialog class="popup-overlay" id="popup-overlay" {{on "click" this.closePopup}}>
+{{!-- <dialog class="popup-overlay" id="popup-overlay" {{on "click" this.closePopup}}>
   <div class="popup-content" {{on "click" this.stopPropagation}}>
     {{yield}}
   </div>
-</dialog>
+</dialog> --}}
+<DModal
+  class="popup-container"
+  @closeModal={{this.closePopup}}
+  @bodyClass={{"popup-content"}}
+  @flashType="error"
+  @hideHeader="true"
+>
+  <:body>
+    {{yield}}
+  </:body>
+</DModal>
